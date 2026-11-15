@@ -240,10 +240,10 @@
   // 4. PERAKITAN OBJEK 3D (KLIP, TALI, CINCIN & KARTU BER-BEVEL)
   // ==========================================================================
   const ANCHOR = new T.Vector3(0, 2.6, 0); // Titik gantung atas
-  const ROPE_LENGTH = 1.6;                  // Panjang normal tali
+  const ROPE_LENGTH = 1.9;                  // Panjang normal tali
   const MAX_PULL = 1.3;                     // Batas maksimal tarikan tali (1.3x)
-  const CARD_W = 1.55;                      // Lebar kartu 3D
-  const CARD_H = 2.32;                      // Tinggi kartu 3D
+  const CARD_W = 2.44;                      // Lebar kartu 3D
+  const CARD_H = 3.30;                      // Tinggi kartu 3D
 
   // Material logam untuk klip atas & cincin kartu
   const metalMat = new T.MeshStandardMaterial({

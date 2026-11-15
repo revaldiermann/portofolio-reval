@@ -62,7 +62,7 @@
 
   if (typerEl) {
     const words = ["Fullstack Developer", "Web Engineer", "Problem Solver"];
-    let wordIndex = 0;
+    let wordIndex = 0;``
     let charIndex = 0;
     let isDeleting = false;
 
@@ -208,5 +208,42 @@
     toTopBtn.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
+  }
+})();
+
+
+  // ==========================================================================
+  // 11. START ANIMASI BINTANG
+  // ==========================================================================
+(() => {
+  const starsContainer = document.getElementById('stars');
+  if (!starsContainer) return;
+  // Jumlah bintang yang ingin dibuat
+  const starCount = 45;
+
+  for (let i = 0; i < starCount; i++) {
+    const star = document.createElement('i');
+    star.className = 'star';
+
+    // 1. Ukuran bintang acak antara 1px hingga 3px
+    const size = Math.random() * 2 + 1;
+    star.style.width = `${size}px`;
+    star.style.height = `${size}px`;
+
+    // 2. Posisi horizontal acak (0% - 100% dari lebar layar)
+    star.style.left = `${Math.random() * 100}%`;
+
+    // 3. Durasi terbang acak (antara 12 detik sampai 28 detik)
+    const duration = Math.random() * 16 + 12;
+    star.style.animationDuration = `${duration}s`;
+
+    // 4. Delay acak (0s - 15s) agar bintang tidak muncul bersamaan di awal
+    const delay = Math.random() * 15;
+    star.style.animationDelay = `${delay}s`;
+
+    // 5. Tingkat transparansi acak agar kedalaman visual lebih alami
+    star.style.opacity = Math.random() * 0.7 + 0.3;
+
+    starsContainer.appendChild(star);
   }
 })();

@@ -1,6 +1,11 @@
 # Portofolio Revaldi Ermansyah
  
 Website portofolio personal bertema **dark + neon** untuk seorang Fullstack Developer. Dibangun hanya dengan **HTML5, CSS, dan JavaScript** (tanpa framework), dengan **lanyard 3D interaktif** di bagian hero yang bisa ditarik, memantul, dan berayun seperti lanyard asli.
+
+## Preview & Dokumentasi
+
+![Dokumentasi Portofolio 1](doc/doc1.png)
+
  
 ## Fitur
  
