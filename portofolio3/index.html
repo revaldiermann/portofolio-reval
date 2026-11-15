@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portofolio Revaldi Ermansyah — Fullstack Developer.">
+<meta name="theme-color" content="#050510">
+<title>Revaldi Ermansyah | Portofolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="welcome-screen-root" id="loader">
+  <div class="welcome-loader">
+    <div class="welcome-loader-number"><b id="loadNum">0</b><span>%</span></div>
+    <div class="welcome-progress-track"><span id="loadBar"></span></div>
+    <div class="welcome-loader-count">Memuat portofolio…</div>
+  </div>
+</div>
+
+<div class="gsap-ambient"><i class="gsap-ambient-orb gsap-ambient-orb-one"></i><i class="gsap-ambient-orb gsap-ambient-orb-two"></i><i class="gsap-ambient-orb gsap-ambient-orb-three"></i></div>
+<div class="meteor-background" id="meteors"></div>
+
+<div class="home-page-container"><div class="home-ui-scale">
+
+<header class="navbar-root" id="navbar">
+  <div class="navbar-container glass-surface--fallback">
+    <a href="#home" class="navbar-brand"><span class="navbar-logo-icon">&lt;/&gt;<i class="navbar-logo-dot"></i></span></a>
+    <!-- <span class="navbar-mobile-brand">Revaldi</span> -->
+    <nav class="navbar-links">
+      <a class="navbar-link-item is-active" href="#home">Home</a>
+      <a class="navbar-link-item" href="#about">About</a>
+      <a class="navbar-link-item" href="#experience">Experience</a>
+      <a class="navbar-link-item" href="#portfolio">Portfolio</a>
+      <a class="navbar-link-item" href="#contact">Contact</a>
+    </nav>
+    <div class="navbar-actions">
+      <!-- <a href="#contact" class="navbar-cta-btn">Hubungi Saya</a> -->
+      <button class="navbar-mobile-toggle" id="menuBtn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+  <div class="navbar-mobile-menu glass-surface--fallback" id="mobileMenu">
+    <div class="navbar-mobile-inner">
+      <a class="navbar-mobile-link" href="#home">Home</a>
+      <a class="navbar-mobile-link" href="#about">About</a>
+      <a class="navbar-mobile-link" href="#experience">Experience</a>
+      <a class="navbar-mobile-link" href="#portfolio">Portfolio</a>
+      <a class="navbar-mobile-link" href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero-root-section" id="home">
+  <div class="hero-container-inner">
+    <div class="hero-text-col">
+      <span class="hero-status-pill"><i class="hero-status-dot"></i><span class="hero-status-label">Open for work</span></span>
+      <div class="hero-heading-group">
+        <h1 class="hero-h1-white">Hai, saya</h1>
+        <h1 class="hero-h1-gradient">Revaldi Ermansyah</h1>
+      </div>
+      <div class="hero-typewriter-row"><span class="hero-typewriter-text" id="typer"></span><i class="hero-typewriter-cursor"></i></div>
+      <p class="hero-description-copy">Fullstack Developer yang membangun aplikasi web dari antarmuka hingga server — cepat, rapi, dan siap dipakai.</p>
+      <div class="hero-action-row">
+        <a href="#portfolio" class="hero-btn-primary">Lihat Proyek</a>
+        <a href="#contact" class="hero-btn-secondary">Hubungi Saya</a>
+      </div>
+      <div class="hero-find-me-wrap">
+        <span class="hero-find-me-label">Find me</span>
+        <div class="hero-social-buttons">
+          <a class="hero-social-icon-btn" href="#" aria-label="GitHub">GH</a>
+          <a class="hero-social-icon-btn" href="#" aria-label="Instagram">IG</a>
+          <a class="hero-social-icon-btn" href="#" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual"><div class="lanyard-card-container" id="lanyard" data-name="REVALDI ERMANSYAH" data-role="Fullstack Developer" data-email="revaldi@email.com"></div></div>
+  </div>
+</section>
+
+<section class="about-root-section" id="about">
+  <h2 class="section-display-title">About Me</h2>
+  <div class="about-container-inner">
+    <div class="about-intro">
+      <h2 class="about-title"><span class="about-title-greeting">Halo!</span><span>Saya Revaldi</span></h2>
+      <a href="#contact" class="about-action about-action-primary">Ayo Berkolaborasi</a><br>
+      <a href="#" class="about-action about-action-secondary">Unduh CV</a>
+    </div>
+    <div class="about-portrait-stage">
+      <div class="about-portrait-glow"></div>
+      <i class="about-portrait-orbit"></i><i class="about-portrait-orbit about-portrait-orbit-two"></i>
+      <div class="about-avatar">RE</div>
+      <i class="about-portrait-spark"></i>
+    </div>
+    <div class="about-bio">
+      <p>Saya <strong>Fullstack Developer</strong> yang suka membangun produk web dari nol sampai rilis.</p>
+      <p>Nyaman di <strong>frontend</strong>, <strong>backend</strong>, dan <strong>database</strong> — dengan fokus pada kode yang bersih dan mudah dirawat.</p>
+    </div>
+  </div>
+</section>
+
+<section class="experience-section" id="experience">
+  <div class="experience-container">
+    <h2 class="section-display-title">Experience</h2>
+    <div class="experience-columns">
+      <div class="experience-group"><h2>Pekerjaan</h2>
+        <div class="experience-card"><div class="experience-logo">💼</div><div class="experience-card-copy"><h3>Fullstack Developer</h3><p>Nama Perusahaan</p><span class="experience-date">2023 — Sekarang</span></div></div>
+        <div class="experience-card"><div class="experience-logo">🧑‍💻</div><div class="experience-card-copy"><h3>Frontend Developer</h3><p>Freelance</p><span class="experience-date">2021 — 2023</span></div></div>
+      </div>
+      <div class="experience-group"><h2>Pendidikan</h2>
+        <div class="experience-card"><div class="experience-logo">🎓</div><div class="experience-card-copy"><h3>S1 Teknik Informatika</h3><p>Nama Universitas</p><span class="experience-date">2019 — 2023</span></div></div>
+        <div class="experience-card"><div class="experience-logo">📜</div><div class="experience-card-copy"><h3>Sertifikasi Web Developer</h3><p>Nama Lembaga</p><span class="experience-date">2022</span></div></div>
+      </div>
+    </div>
+    <div class="experience-stats">
+      <div class="experience-stat-card"><div class="experience-stat-top"><span class="experience-stat-icon">📁</span><strong>30+</strong></div><h3>Proyek</h3><p>Selesai dikerjakan</p></div>
+      <div class="experience-stat-card"><div class="experience-stat-top"><span class="experience-stat-icon">⏳</span><strong>3+</strong></div><h3>Tahun</h3><p>Pengalaman coding</p></div>
+      <div class="experience-stat-card"><div class="experience-stat-top"><span class="experience-stat-icon">🤝</span><strong>12+</strong></div><h3>Klien</h3><p>Puas dengan hasilnya</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio-root-section" id="portfolio">
+  <div class="portfolio-container-inner">
+    <h2 class="section-display-title">Portfolio</h2>
+    <div class="portfolio-tab-bar">
+      <button class="portfolio-tab-btn is-active" data-tab="projects">Proyek</button>
+      <button class="portfolio-tab-btn" data-tab="skills">Skill</button>
+    </div>
+    <div id="tab-projects" class="tab-panel">
+      <div class="portfolio-cards-grid">
+        <article class="portfolio-project-card"><div class="portfolio-card-thumbnail t1">🛒</div><div class="portfolio-card-body"><h3 class="portfolio-card-title">Platform E-Commerce</h3><p class="portfolio-card-desc">Toko online dengan keranjang, pembayaran, dan dashboard admin.</p><a href="#" class="portfolio-details-btn">Lihat Detail</a></div></article>
+        <article class="portfolio-project-card"><div class="portfolio-card-thumbnail t2">📊</div><div class="portfolio-card-body"><h3 class="portfolio-card-title">Sistem Manajemen HR</h3><p class="portfolio-card-desc">Absensi, cuti, dan penggajian karyawan dalam satu aplikasi.</p><a href="#" class="portfolio-details-btn">Lihat Detail</a></div></article>
+        <article class="portfolio-project-card"><div class="portfolio-card-thumbnail t3">💬</div><div class="portfolio-card-body"><h3 class="portfolio-card-title">Aplikasi Chat Real-Time</h3><p class="portfolio-card-desc">Chat dengan room dan pesan langsung memakai WebSocket.</p><a href="#" class="portfolio-details-btn">Lihat Detail</a></div></article>
+      </div>
+    </div>
+    <div id="tab-skills" class="tab-panel" hidden>
+      <div class="portfolio-skills-grid">
+        <div class="portfolio-skill-card"><div class="portfolio-skill-card-content"><span class="portfolio-skill-mark">🟨</span><p class="portfolio-skill-name">JavaScript</p></div></div>
+        <div class="portfolio-skill-card"><div class="portfolio-skill-card-content"><span class="portfolio-skill-mark">⚛️</span><p class="portfolio-skill-name">React</p></div></div>
+        <div class="portfolio-skill-card"><div class="portfolio-skill-card-content"><span class="portfolio-skill-mark">🟢</span><p class="portfolio-skill-name">Node.js</p></div></div>
+        <div class="portfolio-skill-card"><div class="portfolio-skill-card-content"><span class="portfolio-skill-mark">🐘</span><p class="portfolio-skill-name">PHP / Laravel</p></div></div>
+        <div class="portfolio-skill-card"><div class="portfolio-skill-card-content"><span class="portfolio-skill-mark">🗄️</span><p class="portfolio-skill-name">MySQL</p></div></div>
+        <div class="portfolio-skill-card"><div class="portfolio-skill-card-content"><span class="portfolio-skill-mark">🎨</span><p class="portfolio-skill-name">HTML &amp; CSS</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-root-section" id="contact">
+  <div class="contact-container-inner">
+    <h2 class="section-display-title">Contact</h2>
+    <div class="contact-layout">
+      <div class="contact-panel">
+        <h2 class="contact-section-title">Hubungi Saya</h2>
+        <p class="contact-panel-intro">Punya proyek atau ingin berdiskusi? Kirim pesan di sini.</p>
+        <form class="contact-actual-form" id="contactForm">
+          <div class="contact-form-field"><label for="n">Nama</label><input id="n" required placeholder="Nama kamu"></div>
+          <div class="contact-form-field"><label for="e">Email</label><input id="e" type="email" required placeholder="email@kamu.com"></div>
+          <div class="contact-form-field"><label for="m">Pesan</label><textarea id="m" required placeholder="Tulis pesanmu…"></textarea></div>
+          <button class="contact-submit-btn" type="submit">Kirim Pesan</button>
+          <div class="contact-success-toast" id="toast" hidden>Pesan terkirim. Terima kasih!</div>
+        </form>
+      </div>
+      <div class="contact-panel contact-find-wrap">
+        <h3 class="contact-find-title">Find me on</h3>
+        <div class="contact-social-grid">
+          <a class="contact-social-card" href="#"><span class="contact-social-icon-box">🐙</span><span class="contact-social-text"><span class="contact-social-label">GitHub</span><span class="contact-social-sub">@username</span></span></a>
+          <a class="contact-social-card" href="#"><span class="contact-social-icon-box">📸</span><span class="contact-social-text"><span class="contact-social-label">Instagram</span><span class="contact-social-sub">@username</span></span></a>
+          <a class="contact-social-card" href="#"><span class="contact-social-icon-box">💼</span><span class="contact-social-text"><span class="contact-social-label">LinkedIn</span><span class="contact-social-sub">/in/username</span></span></a>
+        </div>
+        <div class="contact-email-card"><span class="contact-email-address" id="mail">revaldi@email.com</span><button class="contact-copy-btn" id="copyBtn" type="button">Salin</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer-root"><div class="footer-container"><div class="footer-bottom-row">
+  <p class="footer-copyright">© 2026 Revaldi Ermansyah. Semua hak dilindungi.</p>
+  <button class="footer-back-to-top" id="toTop" type="button">Kembali ke atas ↑</button>
+</div></div></footer>
+
+</div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="lanyard.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

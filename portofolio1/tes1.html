@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Revaldi Ermansyah — Fullstack Developer. Membangun produk digital yang cepat, scalable, dan berkesan." />
+  <meta name="theme-color" content="#050510" />
+  <title>Revaldi Ermansyah | Fullstack Developer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">rev<span>.</span>dev</a>
+  <ul class="nav-links">
+    <li><a href="#about">about</a></li>
+    <li><a href="#stack">stack</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#experience">experience</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">hire me</a>
+  <button class="nav-menu-btn" id="menuBtn" type="button" aria-label="Buka menu" aria-controls="mobileMenu" aria-expanded="false">☰</button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" aria-label="Menu navigasi mobile">
+  <button class="mobile-close" id="menuClose">✕</button>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#stack" onclick="closeMobile()">Stack</a>
+  <a href="#projects" onclick="closeMobile()">Projects</a>
+  <a href="#experience" onclick="closeMobile()">Experience</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <canvas id="particles-canvas"></canvas>
+  <div class="hero-grid-line"></div>
+  <div class="hero-glow hero-glow-1"></div>
+  <div class="hero-glow hero-glow-2"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">Fullstack Developer · Based in Indonesia</div>
+    <h1 class="hero-name">Revaldi<br>Ermansyah</h1>
+    <p class="hero-role">Building the full picture.</p>
+    <p class="hero-desc">
+      Saya merancang dan membangun produk digital dari sisi frontend hingga backend — pengalaman yang cepat, arsitektur yang scalable, dan kode yang bersih.
+    </p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-primary">Lihat Proyek &darr;</a>
+      <a href="#contact" class="btn-outline">Hubungi Saya</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num" data-count="30">0+</div>
+        <div class="hero-stat-label">Proyek Selesai</div>
+      </div>
+      <div>
+        <div class="hero-stat-num" data-count="3">0+</div>
+        <div class="hero-stat-label">Tahun Pengalaman</div>
+      </div>
+      <div>
+        <div class="hero-stat-num" data-count="12">0+</div>
+        <div class="hero-stat-label">Klien Puas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-label">about me</div>
+    <h2 class="section-title">Siapa saya?</h2>
+    <div class="about-grid fade-in">
+      <div class="about-text">
+        <p>
+          Saya Revaldi Ermansyah, seorang Fullstack Developer yang bersemangat membangun aplikasi web dari nol hingga siap produksi. Saya percaya bahwa kode yang baik adalah kode yang bisa dibaca, dipelihara, dan berkembang bersama bisnis.
+        </p>
+        <p>
+          Dari merancang antarmuka yang intuitif di sisi client, hingga membangun API yang robust dan database yang efisien di sisi server — saya nyaman bekerja di seluruh lapisan stack.
+        </p>
+        <p>
+          Di luar layar, saya aktif berkontribusi pada komunitas developer lokal dan terus belajar teknologi terbaru.
+        </p>
+      </div>
+      <div class="about-skills">
+        <div class="skill-bar-row">
+          <div class="skill-bar-info"><span class="skill-name">Frontend (React / Vue)</span><span class="skill-pct">90%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="--w:0.90"></div></div>
+        </div>
+        <div class="skill-bar-row">
+          <div class="skill-bar-info"><span class="skill-name">Backend (Node / Laravel)</span><span class="skill-pct">85%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="--w:0.85"></div></div>
+        </div>
+        <div class="skill-bar-row">
+          <div class="skill-bar-info"><span class="skill-name">Database (SQL / NoSQL)</span><span class="skill-pct">82%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="--w:0.82"></div></div>
+        </div>
+        <div class="skill-bar-row">
+          <div class="skill-bar-info"><span class="skill-name">DevOps & Cloud</span><span class="skill-pct">70%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="--w:0.70"></div></div>
+        </div>
+        <div class="skill-bar-row">
+          <div class="skill-bar-info"><span class="skill-name">UI/UX Design</span><span class="skill-pct">75%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="--w:0.75"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section id="stack">
+  <div class="container">
+    <div class="section-label">tech stack</div>
+    <h2 class="section-title">Tools & Teknologi</h2>
+    <p class="section-desc">Teknologi yang saya gunakan sehari-hari untuk membangun produk end-to-end.</p>
+    <div class="stack-grid fade-in">
+      <div class="stack-card"><div class="stack-icon">⚛️</div><div class="stack-name">React</div></div>
+      <div class="stack-card"><div class="stack-icon">💚</div><div class="stack-name">Vue.js</div></div>
+      <div class="stack-card"><div class="stack-icon">🟨</div><div class="stack-name">JavaScript</div></div>
+      <div class="stack-card"><div class="stack-icon">🔷</div><div class="stack-name">TypeScript</div></div>
+      <div class="stack-card"><div class="stack-icon">🟢</div><div class="stack-name">Node.js</div></div>
+      <div class="stack-card"><div class="stack-icon">🐘</div><div class="stack-name">PHP/Laravel</div></div>
+      <div class="stack-card"><div class="stack-icon">🗄️</div><div class="stack-name">MySQL</div></div>
+      <div class="stack-card"><div class="stack-icon">🍃</div><div class="stack-name">MongoDB</div></div>
+      <div class="stack-card"><div class="stack-icon">🐳</div><div class="stack-name">Docker</div></div>
+      <div class="stack-card"><div class="stack-icon">☁️</div><div class="stack-name">AWS</div></div>
+      <div class="stack-card"><div class="stack-icon">🔥</div><div class="stack-name">Firebase</div></div>
+      <div class="stack-card"><div class="stack-icon">🐙</div><div class="stack-name">Git / GitHub</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-label">projects</div>
+    <h2 class="section-title">Proyek Pilihan</h2>
+    <p class="section-desc">Beberapa proyek yang pernah saya bangun — dari aplikasi startup hingga sistem enterprise.</p>
+    <div class="projects-grid fade-in">
+
+      <div class="project-card">
+        <div class="project-thumb" style="background:#0a0a1a;">🛒</div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">React</span>
+            <span class="project-tag">Node.js</span>
+            <span class="project-tag">MongoDB</span>
+          </div>
+          <h3 class="project-title">Platform E-Commerce</h3>
+          <p class="project-desc">Aplikasi belanja online lengkap dengan manajemen produk, keranjang, pembayaran Midtrans, dan dashboard admin real-time.</p>
+          <div class="project-links">
+            <a href="#" class="project-link">↗ Live Demo</a>
+            <a href="#" class="project-link">⌥ Source</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb" style="background:#0a0a1a;">📊</div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">Vue.js</span>
+            <span class="project-tag">Laravel</span>
+            <span class="project-tag">MySQL</span>
+          </div>
+          <h3 class="project-title">Sistem Manajemen HR</h3>
+          <p class="project-desc">Aplikasi HR komprehensif: absensi, penggajian, pengajuan cuti, dan laporan kinerja karyawan terintegrasi.</p>
+          <div class="project-links">
+            <a href="#" class="project-link">↗ Live Demo</a>
+            <a href="#" class="project-link">⌥ Source</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb" style="background:#0a0a1a;">💬</div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">React</span>
+            <span class="project-tag">Socket.io</span>
+            <span class="project-tag">Redis</span>
+          </div>
+          <h3 class="project-title">Real-Time Chat App</h3>
+          <p class="project-desc">Aplikasi chat real-time dengan fitur room, direct message, notifikasi push, dan enkripsi end-to-end.</p>
+          <div class="project-links">
+            <a href="#" class="project-link">↗ Live Demo</a>
+            <a href="#" class="project-link">⌥ Source</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label">experience</div>
+    <h2 class="section-title">Riwayat Pekerjaan</h2>
+    <div class="timeline fade-in">
+
+      <div class="timeline-item">
+        <div class="timeline-date">2023 — Sekarang</div>
+        <div>
+          <div class="timeline-title">Senior Fullstack Developer</div>
+          <div class="timeline-company">PT. Digital Nusantara</div>
+          <div class="timeline-desc">Memimpin pengembangan platform SaaS untuk klien enterprise, merancang arsitektur microservices, dan mentoring tim junior developer.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2021 — 2023</div>
+        <div>
+          <div class="timeline-title">Fullstack Developer</div>
+          <div class="timeline-company">Startup Teknologi Lokal</div>
+          <div class="timeline-desc">Membangun fitur produk dari frontend hingga backend, mengintegrasikan payment gateway, dan mengoptimalkan performa database hingga 60% lebih cepat.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2020 — 2021</div>
+        <div>
+          <div class="timeline-title">Frontend Developer</div>
+          <div class="timeline-company">Freelance</div>
+          <div class="timeline-desc">Mengerjakan berbagai proyek web untuk klien lokal dan internasional — landing pages, dashboard, dan aplikasi web interaktif.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">contact</div>
+    <h2 class="section-title">Mari Berkolaborasi</h2>
+    <p class="section-desc">Punya proyek menarik? Saya terbuka untuk diskusi kerja sama, freelance, maupun full-time.</p>
+    <div class="contact-wrap fade-in">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-item-label">email</div>
+            <div class="contact-item-val">revaldi@email.com</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📱</div>
+          <div>
+            <div class="contact-item-label">whatsapp</div>
+            <div class="contact-item-val">+62 812 xxxx xxxx</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-item-label">lokasi</div>
+            <div class="contact-item-val">Indonesia 🇮🇩</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🔗</div>
+          <div>
+            <div class="contact-item-label">linkedin</div>
+            <div class="contact-item-val">linkedin.com/in/revaldi</div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form">
+        <div class="form-group">
+          <label class="form-label" for="contactName">nama</label>
+          <input id="contactName" name="name" type="text" class="form-input" placeholder="Nama kamu" autocomplete="name" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="contactEmail">email</label>
+          <input id="contactEmail" name="email" type="email" class="form-input" placeholder="email@kamu.com" autocomplete="email" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="contactMessage">pesan</label>
+          <textarea id="contactMessage" name="message" class="form-textarea" placeholder="Ceritakan proyekmu..." required></textarea>
+        </div>
+        <button type="submit" class="form-send">Kirim Pesan →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">© 2024 Revaldi Ermansyah. Dibuat dengan ❤️ dan ☕</div>
+    <div class="footer-socials">
+      <a href="#" class="footer-social" aria-label="GitHub">GH</a>
+      <a href="#" class="footer-social" aria-label="LinkedIn">in</a>
+      <a href="#" class="footer-social" aria-label="Instagram">IG</a>
+    </div>
+  </div>
+</footer>
+
+<script src="index.js"></script>
+</body>
+</html>

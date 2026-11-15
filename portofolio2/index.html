@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <!-- ==========================================================================
+       1. METADATA DASAR & PENGATURAN DOKUMEN
+       - Mengatur karakter, batas layar seluler (responsive), dan informasi SEO dasar.
+      -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portofolio Revaldi Ermansyah — Fullstack Developer."
+    />
+    <meta name="theme-color" content="#050510" />
+    <!-- Warna UI browser seluler (Chrome/Safari) -->
+
+    <title>Revaldi Ermansyah | Portofolio</title>
+
+    <!-- Preconnect untuk mempercepat proses loading Font dari server Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- File CSS Eksternal -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ==========================================================================
+       2. WELCOME / LOADING SCREEN
+       - Layar pemuatan awal yang dianimasikan menggunakan JavaScript (loadNum & loadBar).
+       ========================================================================== -->
+    <div class="welcome-screen-root" id="loader">
+      <div class="welcome-loader">
+        <div class="welcome-loader-number">
+          <!-- Angka persentase dikontrol lewat JavaScript (0% -> 100%) -->
+          <b id="loadNum">0</b><span>%</span>
+        </div>
+        <!-- Garis indikator kemajuan (progress bar) -->
+        <div class="welcome-progress-track">
+          <span id="loadBar"></span>
+        </div>
+        <div class="welcome-loader-count">Memuat portofolio…</div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+       3. ELEMEN LATAR BELAKANG (DEKORASI VISUAL)
+       - Cahaya ambient mengambang (orbs) dan animasi meteor canvas/JS.
+       ========================================================================== -->
+    <div class="gsap-ambient">
+      <i class="gsap-ambient-orb gsap-ambient-orb-one"></i>
+      <i class="gsap-ambient-orb gsap-ambient-orb-two"></i>
+      <i class="gsap-ambient-orb gsap-ambient-orb-three"></i>
+    </div>
+    <!-- meteor -->
+    <div class="meteor-background" id="meteors"></div>
+    <!-- Penampung bintang-bintang melayang -->
+    <div class="stars-background" id="stars"></div>
+
+    <!-- Wrapper utama penampung konten portofolio -->
+    <div class="home-page-container">
+      <div class="home-ui-scale">
+        <!-- ==========================================================================
+           4. NAVBAR (NAVIGASI UTAMA)
+           - Berisi Logo, Link Navigasi Dekstop, dan Tombol Menu Seluler (Hamburger).
+           ========================================================================== -->
+        <header class="navbar-root" id="navbar">
+          <div class="navbar-container glass-surface--fallback">
+            <!-- Logo Brand -->
+            <a href="#home" class="navbar-brand">
+              <span class="navbar-logo-icon"
+                >&lt;/&gt;<i class="navbar-logo-dot"></i
+              ></span>
+              <span class="navbar-brand-name">portofolio</span>
+            </a>
+
+            <!-- Brand khusus versi HP (tampil di tengah saat mobile) -->
+            <span class="navbar-mobile-brand">PORTOFOLIO</span>
+
+            <!-- Navigasi Tampilan Desktop -->
+            <nav class="navbar-links">
+              <a class="navbar-link-item is-active" href="#home">Home</a>
+              <a class="navbar-link-item" href="#about">About</a>
+              <a class="navbar-link-item" href="#experience">Experience</a>
+              <a class="navbar-link-item" href="#portfolio">Portfolio</a>
+              <a class="navbar-link-item" href="#contact">Contact</a>
+            </nav>
+
+            <!-- Tombol Aksi Kanan & Toggle Mobile -->
+            <div class="navbar-actions">
+              <a href="#contact" class="navbar-cta-btn">reval</a>
+              <button
+                class="navbar-mobile-toggle"
+                id="menuBtn"
+                aria-label="Menu"
+              >
+                ☰
+              </button>
+            </div>
+          </div>
+
+          <!-- Menu Pop-up/Dropdown Tampilan Seluler (Mobile) -->
+          <div
+            class="navbar-mobile-menu glass-surface--fallback"
+            id="mobileMenu"
+          >
+            <div class="navbar-mobile-inner">
+              <a class="navbar-mobile-link" href="#home">Home</a>
+              <a class="navbar-mobile-link" href="#about">About</a>
+              <a class="navbar-mobile-link" href="#experience">Experience</a>
+              <a class="navbar-mobile-link" href="#portfolio">Portfolio</a>
+              <a class="navbar-mobile-link" href="#contact">Contact</a>
+            </div>
+          </div>
+        </header>
+
+        <main>
+          <!-- ==========================================================================
+             5. HERO SECTION (HALAMAN UTAMA / BANNER)
+             - Memperkenalkan diri, efek ketik (typewriter), dan tampilan kartu kode.
+             ========================================================================== -->
+          <section class="hero-root-section" id="home">
+            <div class="hero-container-inner">
+              <!-- Kolom Teks / Perkenalan -->
+              <div class="hero-text-col">
+                <!-- Label Status / Badge -->
+                <span class="hero-status-pill">
+                  <i class="hero-status-dot"></i>
+                  <span class="hero-status-label">Open for work</span>
+                </span>
+
+                <!-- Judul Utama -->
+                <div class="hero-heading-group">
+                  <h1 class="hero-h1-white">Hai, saya</h1>
+                  <h1 class="hero-h1-gradient">Revaldi Ermansyah</h1>
+                </div>
+
+                <!-- Efek Teks Ketik Otomatis (diisi oleh elemen #typer via JS) -->
+                <div class="hero-typewriter-row">
+                  <span class="hero-typewriter-text" id="typer"></span>
+                  <i class="hero-typewriter-cursor"></i>
+                </div>
+
+                <p class="hero-description-copy">
+                  Fullstack Developer yang membangun aplikasi web dari antarmuka
+                  hingga server — cepat, rapi, dan siap dipakai.
+                </p>
+
+                <!-- Tombol Aksi (Call to Action) -->
+                <div class="hero-action-row">
+                  <a href="#portfolio" class="hero-btn-primary">Lihat Proyek</a>
+                  <a href="#contact" class="hero-btn-secondary">Hubungi Saya</a>
+                </div>
+
+                <!-- Link Sosial Media Ringkas -->
+                <div class="hero-find-me-wrap">
+                  <span class="hero-find-me-label">Find me</span>
+                  <div class="hero-social-buttons">
+
+                    <a class="hero-social-icon-btn" href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="hero-social-icon-btn" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a class="hero-social-icon-btn" href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+              <!-- Kolom Visual (Kartu Preview Kode IDE) -->
+              <div class="hero-visual">
+                <!-- lanyard -->
+                <section class="lanyard-card-container" aria-label="Interactive 3D Lanyard">
+                  <div class="lanyard-viewport">
+                    <div class="lanyard">
+                      <canvas class="lanyard-canvas" id="lanyardCanvas"></canvas>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <!-- Kolom Visual (Kartu Preview Kode IDE) -->
+                <div class="hero-code-card">
+                  <div class="hero-code-dots"><i></i><i></i><i></i></div>
+                  <pre><span class="c-b">const</span> dev = {
+  name: <span class="c-g">"Revaldi"</span>,
+  role: <span class="c-g">"Fullstack"</span>,
+  stack: [<span class="c-g">"JS"</span>, <span class="c-g">"Node"</span>, <span class="c-g">"SQL"</span>],
+  coffee: <span class="c-b">true</span>
+};</pre>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ==========================================================================
+             6. ABOUT SECTION (TENTANG SAYA)
+             - Ringkasan profil, tombol aksi, dan panggung avatar/foto profil.
+             ========================================================================== -->
+          <section class="about-root-section" id="about">
+            <h2 class="section-display-title">About Me</h2>
+
+            <div class="about-container-inner">
+              <!-- Pengenalan Singkat & Akses CV -->
+              <div class="about-intro">
+                <h2 class="about-title">
+                  <span class="about-title-greeting">Halo!</span>
+                  <span>Saya Revaldi</span>
+                </h2>
+                <a href="#contact" class="about-action about-action-primary"
+                  >Ayo Berkolaborasi</a
+                ><br />
+                <a href="#" class="about-action about-action-secondary"
+                  >Unduh CV</a
+                >
+              </div>
+
+              <!-- Visual Stage Avatar / Foto Profil -->
+              <div class="about-portrait-stage">
+                <div class="about-portrait-glow"></div>
+                <i class="about-portrait-orbit"></i>
+                <i class="about-portrait-orbit about-portrait-orbit-two"></i>
+                <div class="about-avatar">RE</div>
+                <i class="about-portrait-spark"></i>
+              </div>
+
+              <!-- Deskripsi Singkat Bio -->
+              <div class="about-bio">
+                <p>
+                  Saya <strong>Fullstack Developer</strong> yang suka membangun
+                  produk web dari nol sampai rilis.
+                </p>
+                <p>
+                  Nyaman di <strong>frontend</strong>, <strong>backend</strong>,
+                  dan <strong>database</strong> — dengan fokus pada kode yang
+                  bersih dan mudah dirawat.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ==========================================================================
+             7. EXPERIENCE SECTION (PENGALAMAN & STATISTIK)
+             - Daftar riwayat pekerjaan, pendidikan, serta pencapaian angka (statistik).
+             ========================================================================== -->
+          <section class="experience-section" id="experience">
+            <div class="experience-container">
+              <h2 class="section-display-title">Experience</h2>
+
+              <!-- Grid 2 Kolom: Pekerjaan & Pendidikan -->
+              <div class="experience-columns">
+                <!-- Kolom Pekerjaan -->
+                <div class="experience-group">
+                  <h2>Pekerjaan</h2>
+                  <div class="experience-card">
+                    <div class="experience-logo">💼</div>
+                    <div class="experience-card-copy">
+                      <h3>Fullstack Developer</h3>
+                      <p>Nama Perusahaan</p>
+                      <span class="experience-date">2023 — Sekarang</span>
+                    </div>
+                  </div>
+
+                  <div class="experience-card">
+                    <div class="experience-logo">🧑‍💻</div>
+                    <div class="experience-card-copy">
+                      <h3>Frontend Developer</h3>
+                      <p>Freelance</p>
+                      <span class="experience-date">2021 — 2023</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Kolom Pendidikan -->
+                <div class="experience-group">
+                  <h2>Pendidikan</h2>
+                  <div class="experience-card">
+                    <div class="experience-logo">🎓</div>
+                    <div class="experience-card-copy">
+                      <h3>S1 Teknik Informatika</h3>
+                      <p>Nama Universitas</p>
+                      <span class="experience-date">2019 — 2023</span>
+                    </div>
+                  </div>
+
+                  <div class="experience-card">
+                    <div class="experience-logo">📜</div>
+                    <div class="experience-card-copy">
+                      <h3>Sertifikasi Web Developer</h3>
+                      <p>Nama Lembaga</p>
+                      <span class="experience-date">2022</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Grid Kartu Statistik Ringkas -->
+              <div class="experience-stats">
+                <div class="experience-stat-card">
+                  <div class="experience-stat-top">
+                    <span class="experience-stat-icon">📁</span>
+                    <strong>30+</strong>
+                  </div>
+                  <h3>Proyek</h3>
+                  <p>Selesai dikerjakan</p>
+                </div>
+
+                <div class="experience-stat-card">
+                  <div class="experience-stat-top">
+                    <span class="experience-stat-icon">⏳</span>
+                    <strong>3+</strong>
+                  </div>
+                  <h3>Tahun</h3>
+                  <p>Pengalaman coding</p>
+                </div>
+
+                <div class="experience-stat-card">
+                  <div class="experience-stat-top">
+                    <span class="experience-stat-icon">🤝</span>
+                    <strong>12+</strong>
+                  </div>
+                  <h3>Klien</h3>
+                  <p>Puas dengan hasilnya</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ==========================================================================
+             8. PORTFOLIO SECTION (PORTOFOLIO & KEAHLIAN)
+             - Menggunakan sistem Tab untuk berpindah tampilan antara "Proyek" dan "Skill".
+             ========================================================================== -->
+          <section class="portfolio-root-section" id="portfolio">
+            <div class="portfolio-container-inner">
+              <h2 class="section-display-title">Portfolio</h2>
+
+              <!-- Tombol Navigasi Tab (Dihubungkan via atribut data-tab) -->
+              <div class="portfolio-tab-bar">
+                <button class="portfolio-tab-btn is-active" data-tab="projects">
+                  Proyek
+                </button>
+                <button class="portfolio-tab-btn" data-tab="skills">
+                  Skill
+                </button>
+              </div>
+
+              <!-- Panel 1: Daftar Proyek (Aktif) -->
+              <div id="tab-projects" class="tab-panel">
+                <div class="portfolio-cards-grid">
+                  <!-- Kartu Proyek 1 -->
+                  <article class="portfolio-project-card">
+                    <div class="portfolio-card-thumbnail t1">🛒</div>
+                    <div class="portfolio-card-body">
+                      <h3 class="portfolio-card-title">Platform E-Commerce</h3>
+                      <p class="portfolio-card-desc">
+                        Toko online dengan keranjang, pembayaran, dan dashboard
+                        admin.
+                      </p>
+                      <a href="#" class="portfolio-details-btn">Lihat Detail</a>
+                    </div>
+                  </article>
+
+                  <!-- Kartu Proyek 2 -->
+                  <article class="portfolio-project-card">
+                    <div class="portfolio-card-thumbnail t2">📊</div>
+                    <div class="portfolio-card-body">
+                      <h3 class="portfolio-card-title">Sistem Manajemen HR</h3>
+                      <p class="portfolio-card-desc">
+                        Absensi, cuti, dan penggajian karyawan dalam satu
+                        aplikasi.
+                      </p>
+                      <a href="#" class="portfolio-details-btn">Lihat Detail</a>
+                    </div>
+                  </article>
+
+                  <!-- Kartu Proyek 3 -->
+                  <article class="portfolio-project-card">
+                    <div class="portfolio-card-thumbnail t3">💬</div>
+                    <div class="portfolio-card-body">
+                      <h3 class="portfolio-card-title">
+                        Aplikasi Chat Real-Time
+                      </h3>
+                      <p class="portfolio-card-desc">
+                        Chat dengan room dan pesan langsung memakai WebSocket.
+                      </p>
+                      <a href="#" class="portfolio-details-btn">Lihat Detail</a>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Panel 2: Daftar Skill/Keahlian (Disembunyikan secara default dengan atribut 'hidden') -->
+              <div id="tab-skills" class="tab-panel" hidden>
+                <div class="portfolio-skills-grid">
+                  <div class="portfolio-skill-card">
+                    <div class="portfolio-skill-card-content">
+                      <span class="portfolio-skill-mark">🟨</span>
+                      <p class="portfolio-skill-name">JavaScript</p>
+                    </div>
+                  </div>
+
+                  <div class="portfolio-skill-card">
+                    <div class="portfolio-skill-card-content">
+                      <span class="portfolio-skill-mark">⚛️</span>
+                      <p class="portfolio-skill-name">React</p>
+                    </div>
+                  </div>
+
+                  <div class="portfolio-skill-card">
+                    <div class="portfolio-skill-card-content">
+                      <span class="portfolio-skill-mark">🟢</span>
+                      <p class="portfolio-skill-name">Node.js</p>
+                    </div>
+                  </div>
+
+                  <div class="portfolio-skill-card">
+                    <div class="portfolio-skill-card-content">
+                      <span class="portfolio-skill-mark">🐘</span>
+                      <p class="portfolio-skill-name">PHP / Laravel</p>
+                    </div>
+                  </div>
+
+                  <div class="portfolio-skill-card">
+                    <div class="portfolio-skill-card-content">
+                      <span class="portfolio-skill-mark">🗄️</span>
+                      <p class="portfolio-skill-name">MySQL</p>
+                    </div>
+                  </div>
+
+                  <div class="portfolio-skill-card">
+                    <div class="portfolio-skill-card-content">
+                      <span class="portfolio-skill-mark">🎨</span>
+                      <p class="portfolio-skill-name">HTML &amp; CSS</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ==========================================================================
+             9. CONTACT SECTION (FORMULIR & KONTAK)
+             - Formulir pesan langsung & daftar akun media sosial/email resmi.
+             ========================================================================== -->
+          <section class="contact-root-section" id="contact">
+            <div class="contact-container-inner">
+              <h2 class="section-display-title">Contact</h2>
+
+              <div class="contact-layout">
+                <!-- Panel Kiri: Formulir Kontak -->
+                <div class="contact-panel">
+                  <h2 class="contact-section-title">Hubungi Saya</h2>
+                  <p class="contact-panel-intro">
+                    Punya proyek atau ingin berdiskusi? Kirim pesan di sini.
+                  </p>
+
+                  <form class="contact-actual-form" id="contactForm">
+                    <div class="contact-form-field">
+                      <label for="n">Nama</label>
+                      <input
+                        id="n"
+                        name="name"
+                        required
+                        placeholder="Nama kamu"
+                      />
+                    </div>
+
+                    <div class="contact-form-field">
+                      <label for="e">Email</label>
+                      <input
+                        id="e"
+                        name="email"
+                        type="email"
+                        required
+                        placeholder="email@kamu.com"
+                      />
+                    </div>
+
+                    <div class="contact-form-field">
+                      <label for="m">Pesan</label>
+                      <textarea
+                        id="m"
+                        name="message"
+                        required
+                        placeholder="Tulis pesanmu…"
+                      ></textarea>
+                    </div>
+
+                    <button class="contact-submit-btn" type="submit">
+                      Kirim Pesan
+                    </button>
+
+                    <!-- Notifikasi pesan berhasil terkirim -->
+                    <div class="contact-success-toast" id="toast" hidden>
+                      Pesan terkirim. Terima kasih!
+                    </div>
+                  </form>
+                </div>
+
+                <!-- Panel Kanan: Detail Media Sosial & Email -->
+                <div class="contact-panel contact-find-wrap">
+                  <h3 class="contact-find-title">Find me on</h3>
+
+                  <div class="contact-social-grid">
+                    <a class="contact-social-card" href="#">
+                      <span class="contact-social-icon-box">🐙</span>
+                      <span class="contact-social-text">
+                        <span class="contact-social-label">GitHub</span>
+                        <span class="contact-social-sub">@username</span>
+                      </span>
+                    </a>
+
+                    <a class="contact-social-card" href="#">
+                      <span class="contact-social-icon-box">📸</span>
+                      <span class="contact-social-text">
+                        <span class="contact-social-label">Instagram</span>
+                        <span class="contact-social-sub">@username</span>
+                      </span>
+                    </a>
+
+                    <a class="contact-social-card" href="#">
+                      <span class="contact-social-icon-box">💼</span>
+                      <span class="contact-social-text">
+                        <span class="contact-social-label">LinkedIn</span>
+                        <span class="contact-social-sub">/in/username</span>
+                      </span>
+                    </a>
+                  </div>
+
+                  <!-- Kartu Alamat Email dengan Tombol Salin (Copy to Clipboard) -->
+                  <div class="contact-email-card">
+                    <span class="contact-email-address" id="mail"
+                      >revaldi@email.com</span
+                    >
+                    <button class="contact-copy-btn" id="copyBtn" type="button">
+                      Salin
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <!-- ==========================================================================
+           10. FOOTER (BAGIAN BAWAH HALAMAN)
+           - Informasi hak cipta & tombol kembali ke atas.
+           ========================================================================== -->
+        <footer class="footer-root">
+          <div class="footer-container">
+            <div class="footer-bottom-row">
+              <p class="footer-copyright">
+                © 2026 Revaldi Ermansyah. Semua hak dilindungi.
+              </p>
+              <button class="footer-back-to-top" id="toTop" type="button">
+                Kembali ke atas ↑
+              </button>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- File JavaScript Eksternal -->
+    <script src="script.js"></script>
+    <!-- Library Three.js untuk me-render grafik 3D -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+  /* 3D ID CARD LANYARD WITH CANVAS TEXTURE & METAL CLIP */
+(() => {
+  const canvas = document.getElementById('lanyardCanvas');
+  if (!canvas) return;
+
+  const scene = new THREE.Scene();
+  const container = canvas.parentElement;
+  const width = container.clientWidth || 380;
+  const height = container.clientHeight || 550;
+
+  // 1. Kamera & Renderer
+  const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+  camera.position.set(0, 0, 5.2);
+
+  const renderer = new THREE.WebGLRenderer({
+    canvas: canvas,
+    alpha: true,
+    antialias: true
+  });
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    // 2. Pencahayaan (Lighting) - Redup & Aesthetic (Warna Asli)
+  
+  // Ambient Light: Diturunkan drastis agar tidak flat dan bayangan objek terlihat estetik
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+  scene.add(ambientLight);
+
+  // Directional Light: Diturunkan agar cahaya putih utama tidak terlalu silau / overexposure
+  const dirLight = new THREE.DirectionalLight(0xffffff, 0.7);
+  dirLight.position.set(3, 4, 5);
+  scene.add(dirLight);
+
+  // Point Light: Cahaya biru muda estetis dibuat sedikit lebih lembut namun jangkauannya stabil
+  const pointLight = new THREE.PointLight(0x38bdf8, 1.0, 12);
+  pointLight.position.set(-2, -1, 3);
+  scene.add(pointLight);
+
+  // 3. FUNGSI MEMBUAT DESAIN ID CARD (Drawn via Canvas 2D)
+  function createIDCardTexture(photoImg, bgImg) {
+    const cardCanvas = document.createElement('canvas');
+    cardCanvas.width = 600;
+    cardCanvas.height = 900;
+    const ctx = cardCanvas.getContext('2d');
+
+    // =========================================================================
+    // LAYER 1: BACKGROUND (Paling Belakang)
+    // =========================================================================
+    if (bgImg) {
+      // Jika gambar background berhasil dimuat, gambar latar belakang di sini
+      ctx.drawImage(bgImg, 0, 0, 600, 900);
+    } else {
+      // Fallback jika gambar background belum/gagal dimuat (Warna solid + Garis)
+      ctx.fillStyle = '#e2e8f0';
+      ctx.fillRect(0, 0, 600, 900);
+
+      ctx.strokeStyle = '#cbd5e1';
+      ctx.lineWidth = 1;
+      for (let i = -900; i < 1500; i += 25) {
+        ctx.beginPath();
+        ctx.moveTo(i, 0);
+        ctx.lineTo(i + 900, 900);
+        ctx.stroke();
+      }
+    }
+
+    // =========================================================================
+    // LAYER 2: ELEMEN & TEKS (Otomatis Berada di Atas Background)
+    // =========================================================================
+
+    // Lubang Pengait Atas
+    ctx.fillStyle = '#0f172a';
+    ctx.beginPath();
+    ctx.roundRect(250, 20, 100, 24, 12);
+    ctx.fill();
+
+    // Header Badge "FULLSTACK"
+    ctx.fillStyle = '#0f172a';
+    ctx.fillRect(160, 60, 120, 32);
+    ctx.fillStyle = '#ffffff';
+    ctx.font = '900 18px sans-serif';
+    ctx.fillText('FULLSTACK', 170, 83);
+
+    // Header Utama "DEVELOPER"
+    ctx.fillStyle = '#0f172a';
+    ctx.font = '900 68px sans-serif';
+    ctx.fillText('DEVELOPER', 60, 155);
+
+    // Bingkai Foto Profil (Tengah)
+    const px = 70, py = 175, pw = 460, ph = 490;
+
+    // Layer Foto Profil Utama
+    if (photoImg) {
+      ctx.save();
+      ctx.beginPath();
+      ctx.rect(px, py, pw, ph);
+      ctx.clip();
+      ctx.drawImage(photoImg, px, py, pw, ph);
+      ctx.restore();
+    } else {
+      ctx.fillStyle = '#1e293b';
+      ctx.fillRect(px, py, pw, ph);
+    }
+
+    // Border Bingkai Foto
+    // ctx.strokeStyle = '#0f172a';
+    // ctx.lineWidth = 4;
+    // ctx.strokeRect(px, py, pw, ph);
+
+    // Label Nama (Kotak Hitam di Bawah Foto)
+    ctx.fillStyle = '#0f172a';
+    ctx.fillRect(80, 680, 440, 50);
+    ctx.fillStyle = '#ffffff';
+    ctx.font = '900 24px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('REVALDI ERMANSYAH', 300, 714);
+
+    // Teks Vertikal di Sisi Kanan "SOFTWARE ENGINEER"
+    ctx.save();
+    ctx.translate(540, 620);
+    ctx.rotate(-Math.PI / 2);
+    ctx.fillStyle = '#0f172a';
+    ctx.font = '900 36px sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillText('SOFTWARE ENGINEER', 0, 0);
+    ctx.restore();
+
+    // Footer "PORTFOLIO"
+    ctx.fillStyle = '#0f172a';
+    ctx.font = '900 38px sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillText('PORTFOLIO', 60, 830);
+
+    // Slogan Kecil Footer
+    ctx.fillStyle = '#475569';
+    ctx.font = '500 16px sans-serif';
+    ctx.fillText("Don't repeat yourself", 360, 830);
+
+    const texture = new THREE.CanvasTexture(cardCanvas);
+    texture.encoding = THREE.sRGBEncoding;
+    return texture;
+  }
+
+  // 4. Inisialisasi & Memuat Dua Gambar (Foto Profil & Background)
+  let loadedPhoto = null;
+  let loadedBg = null;
+
+  const textureLoader = new THREE.TextureLoader();
+
+  let frontMaterial = new THREE.MeshStandardMaterial({ 
+    map: createIDCardTexture(null, null),
+    roughness: 0.3,
+    metalness: 0.1 
+  });
+
+  // Fungsi pembantu untuk memperbarui kartu setiap kali ada gambar yang selesai di-load
+  function refreshCardTexture() {
+    frontMaterial.map = createIDCardTexture(loadedPhoto, loadedBg);
+    frontMaterial.needsUpdate = true;
+  }
+
+  // 1. Muat Foto Profil
+  textureLoader.load(
+    'assets/foto1.png',
+    (tex) => {
+      loadedPhoto = tex.image;
+      refreshCardTexture();
+    },
+    undefined,
+    () => console.warn('File assets/foto.png tidak ditemukan.')
+  );
+
+  // 2. Muat Gambar Background Kartu
+  // Sesuaikan nama file background kamu, contoh: 'assets/bg-card.jpg'
+  textureLoader.load(
+    'assets/bg-card.jpeg',
+    (tex) => {
+      loadedBg = tex.image;
+      refreshCardTexture();
+    },
+    undefined,
+    () => console.warn('File assets/bg-card.jpg tidak ditemukan.')
+  );
+
+  const borderMaterial = new THREE.MeshStandardMaterial({ color: 0x0f172a, roughness: 0.2, metalness: 0.8 });
+  const backMaterial = new THREE.MeshStandardMaterial({ color: 0x1e293b, roughness: 0.3, metalness: 0.5 });
+
+  const cardMaterials = [
+    borderMaterial, // kanan
+    borderMaterial, // kiri
+    borderMaterial, // atas
+    borderMaterial, // bawah
+    frontMaterial,  // depan
+    backMaterial   // belakang
+  ];
+
+  // Mesh Utama Kartu (Ukuran 2.2 x 3.3)
+  const cardGroup = new THREE.Group();
+  const cardGeometry = new THREE.BoxGeometry(2.0, 2.5, 0.02);
+  const cardMesh = new THREE.Mesh(cardGeometry, cardMaterials);
+  cardGroup.add(cardMesh);
+
+  // 5. KLIP BESAN LOGAM (Metal Ring & Clip)
+  const metalMaterial = new THREE.MeshStandardMaterial({
+    color: 0xcccccc,
+    metalness: 0.95,
+    roughness: 0.1
+  });
+
+  // Cincin Besi Pengait (Ring)
+  const ringGeo = new THREE.TorusGeometry(0.12, 0.03, 16, 32);
+  const ringMesh = new THREE.Mesh(ringGeo, metalMaterial);
+  ringMesh.position.set(0, 1.68, 0);
+  cardGroup.add(ringMesh);
+
+  // Kepala Klip Pengikat Strap
+  const clipGeo = new THREE.BoxGeometry(0.35, 0.2, 0.12);
+  const clipMesh = new THREE.Mesh(clipGeo, metalMaterial);
+  clipMesh.position.set(0, 1.84, 0);
+  cardGroup.add(clipMesh);
+
+  // 6. TALI LANYARD (Black Ribbon Strap)
+  const strapGeo = new THREE.PlaneGeometry(0.28, 2.5);
+  const strapMat = new THREE.MeshStandardMaterial({
+    color: 0x111111,
+    roughness: 0.8,
+    side: THREE.DoubleSide
+  });
+  const strapMesh = new THREE.Mesh(strapGeo, strapMat);
+  strapMesh.position.set(0, 3.1, 0);
+  cardGroup.add(strapMesh);
+
+  // Masukkan seluruh komponen ke Scene
+  cardGroup.position.y = -0.3;
+  scene.add(cardGroup);
+
+  // 7. INTERAKSI MOUSE & ANIMASI AYUNAN (Pendulum Effect)
+  let targetRotX = 0;
+  let targetRotY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    const normX = (e.clientX / window.innerWidth) * 2 - 1;
+    const normY = -(e.clientY / window.innerHeight) * 2 + 1;
+
+    targetRotY = normX * 0.45;
+    targetRotX = -normY * 0.3;
+  });
+
+  let time = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+
+    time += 0.02;
+    // Ayunan halus bergoyang otomatis seperti ditiup angin
+    const swayX = Math.sin(time) * 0.03;
+    const swayY = Math.cos(time * 0.8) * 0.02;
+
+    // Smooth interpolation (Lerp) ikuti kursor mouse
+    cardGroup.rotation.y += (targetRotY + swayY - cardGroup.rotation.y) * 0.05;
+    cardGroup.rotation.x += (targetRotX + swayX - cardGroup.rotation.x) * 0.05;
+
+    renderer.render(scene, camera);
+  }
+
+  // Respon Resize Layar
+  window.addEventListener('resize', () => {
+    const newW = container.clientWidth;
+    const newH = container.clientHeight;
+    camera.aspect = newW / newH;
+    camera.updateProjectionMatrix();
+    renderer.setSize(newW, newH);
+  });
+
+  animate();
+})();
+</script>
+  </body>
+</html>
